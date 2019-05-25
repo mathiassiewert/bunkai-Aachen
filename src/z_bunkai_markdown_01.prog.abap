@@ -5,6 +5,8 @@
 *&---------------------------------------------------------------------*
 REPORT z_bunkai_markdown_01.
 
+CONSTANTS c_default TYPE string VALUE 'Hello _ABAP Markdown_! ## Untertitel '.
+
 CLASS lcl_demo DEFINITION.
   PUBLIC SECTION.
     METHODS main.
@@ -27,7 +29,7 @@ CLASS lcl_demo IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD main.
-    DATA lv_abap_text TYPE string VALUE 'Hello _ABAP Markdown_!'.
+    DATA lv_abap_text TYPE string VALUE c_default.
 
     display( NEW zmarkdown( )->text( input( lv_abap_text ) ) ).
   ENDMETHOD.
