@@ -6,11 +6,16 @@
     <NAME>Z_BUNKAI_MARKDOWN_01</NAME>
     <SUBC>1</SUBC>
     <RSTAT>K</RSTAT>
-    <RLOAD>E</RLOAD>
+    <RLOAD>D</RLOAD>
     <FIXPT>X</FIXPT>
     <UCCHECK>X</UCCHECK>
    </PROGDIR>
    <TPOOL>
+    <item>
+     <ID>R</ID>
+     <ENTRY>ABAP Bunkai Aachen Testprogramm</ENTRY>
+     <LENGTH>31</LENGTH>
+    </item>
     <item>
      <ID>S</ID>
      <KEY>P_TEXT</KEY>

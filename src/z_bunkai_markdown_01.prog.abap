@@ -5,21 +5,21 @@
 *&---------------------------------------------------------------------*
 REPORT z_bunkai_markdown_01.
 
-PARAMETERS p_text TYPE char120 DEFAULT 'Hello _ABAP Markdown_!' ##NO_TEXT.
+CONSTANTS c_default TYPE string VALUE 'Hello _ABAP Markdown_! ## Untertitel '.
 
 CLASS lcl_demo DEFINITION.
   PUBLIC SECTION.
-    METHODS main IMPORTING iv_text TYPE string.
+    METHODS main.
 
   PRIVATE SECTION.
     METHODS display IMPORTING iv_html TYPE string.
-    METHODS input IMPORTING iv_text        TYPE string OPTIONAL
+    METHODS input IMPORTING iv_text TYPE string OPTIONAL
                   RETURNING VALUE(rv_text) TYPE string.
 ENDCLASS.
 
 
 START-OF-SELECTION.
-  NEW lcl_demo( )->main( CONV string( p_text  ) ).
+  NEW lcl_demo( )->main( ).
 
 CLASS lcl_demo IMPLEMENTATION.
 
@@ -29,7 +29,9 @@ CLASS lcl_demo IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD main.
-    display( NEW zmarkdown( )->text( input( iv_text ) ) ).
+    DATA lv_abap_text TYPE string VALUE c_default.
+
+    display( NEW zmarkdown( )->text( input( lv_abap_text ) ) ).
   ENDMETHOD.
 
   METHOD display.
