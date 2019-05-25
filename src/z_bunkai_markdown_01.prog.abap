@@ -5,7 +5,7 @@
 *&---------------------------------------------------------------------*
 REPORT z_bunkai_markdown_01.
 
-PARAMETERS p_text TYPE string DEFAULT 'Hello _ABAP Markdown_!'.
+PARAMETERS p_text TYPE string DEFAULT 'Hello _ABAP Markdown_!' ##NO_TEXT.
 
 CLASS lcl_demo DEFINITION.
   PUBLIC SECTION.
@@ -13,7 +13,7 @@ CLASS lcl_demo DEFINITION.
 
   PRIVATE SECTION.
     METHODS display IMPORTING iv_html TYPE string.
-    METHODS input IMPORTING iv_text TYPE string OPTIONAL
+    METHODS input IMPORTING iv_text        TYPE string OPTIONAL
                   RETURNING VALUE(rv_text) TYPE string.
 ENDCLASS.
 
