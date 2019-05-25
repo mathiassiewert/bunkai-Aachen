@@ -5,4 +5,4 @@
 *&---------------------------------------------------------------------*
 REPORT zhello_world.
 
-write 'Hello Git!'.
+write 'Hello Git, Version 2!'.
