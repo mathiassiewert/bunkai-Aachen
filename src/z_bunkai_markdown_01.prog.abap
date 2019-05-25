@@ -5,7 +5,7 @@
 *&---------------------------------------------------------------------*
 REPORT z_bunkai_markdown_01.
 
-PARAMETERS p_text TYPE string DEFAULT 'Hello _ABAP Markdown_!' ##NO_TEXT.
+PARAMETERS p_text TYPE char120 DEFAULT 'Hello _ABAP Markdown_!' ##NO_TEXT.
 
 CLASS lcl_demo DEFINITION.
   PUBLIC SECTION.
@@ -19,7 +19,7 @@ ENDCLASS.
 
 
 START-OF-SELECTION.
-  NEW lcl_demo( )->main( p_text ).
+  NEW lcl_demo( )->main( CONV string( p_text  ) ).
 
 CLASS lcl_demo IMPLEMENTATION.
 
